@@ -1,0 +1,25 @@
+{
+  "name": "scrape-qiita-tags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ts-node src/test.ts",
+    "tsc": "tsc",
+    "start": "tsc && functions-framework --target=getQiitaPagesByTagPage",
+    "deploy": "tsc && gcloud functions deploy getQiitaPagesByTagPage --runtime nodejs10 --trigger-http --memory=2048MB --timeout=120s"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^2.1.1",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.6.0",
+    "@types/express": "^4.17.7",
+    "@types/puppeteer": "^3.0.1",
+    "ts-node": "^8.10.2"
+  }
+}
